@@ -5,9 +5,9 @@ from spotipy.oauth2 import SpotifyOAuth
 st.title("Spotify Data Export")
 
 # Your credentials here (you'll add them)
-client_id = "YOUR_CLIENT_ID"
-client_secret = "YOUR_CLIENT_SECRET"
-redirect_uri = "https://YOUR_USERNAME-spotify-roast.streamlit.app/callback"
+client_id = "a00d8eb147664c60a313beb2a47d759c"
+client_secret = "cd1dc9fdbbd542d29f2d78da5a6a12b2"
+redirect_uri = "https://spotify-roast.streamlit.app/"
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     client_id=client_id,
