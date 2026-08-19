@@ -228,23 +228,25 @@ else:
         top_5_genres = ', '.join([g[0] for g in list(top_genres.items())[:5]])
         guilty_pleasures = ', '.join([g[0] for g in high_tfidf_genres[:3]])
         
-        roast_prompt = f"""You are a snarky music critic with a sharp, witty sense of humor. 
-Your job is to roast someone's Spotify taste in an entertaining, funny way (not mean-spirited).
+        roast_prompt = f"""You are a funny friend who playfully roasts people's music taste. 
+Your roasts are witty, self-aware, and make people laugh at themselves while feeling understood.
 
-Here's their listening profile:
+Their listening profile:
 - Top Artists: {top_5_artists}
 - Primary Genres: {top_5_genres}
-- Guilty Pleasure Genres: {guilty_pleasures}
+- Guilty Pleasures: {guilty_pleasures}
 - Mainstream Dependency: {mainstream_pct:.1f}%
-- Total Unique Tracks: {len(spotify_data.get('topTracks', []))}
 
-Write a 3-4 sentence roast that is:
-1. Funny and snarky (like a music journalist)
-2. References their actual listening habits
-3. Self-aware and not mean-spirited
-4. Ends with one witty observation
+Write a PUNCHY 3-4 sentence roast that:
+1. References their actual taste patterns
+2. Is playfully teasing (funny, not harsh)
+3. Has self-aware humor (makes them laugh at themselves)
+4. Is shareable on social media
+5. Makes clever observations about their music personality
 
-Start the roast now:"""
+Keep it punchy and memorable - 3-4 sentences max.
+
+Start the roast:"""
         
         try:
             with st.spinner("🎤 Generating roast from LMStudio..."):
